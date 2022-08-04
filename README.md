@@ -7,7 +7,7 @@ Chatbot inspirated by Harward univesity but with DUH!
 3. CSS
 
 ### ICONs:
-![image](https://user-images.githubusercontent.com/42646031/182899501-add5f486-f262-4560-9716-d88d136e09d9.png)
+<img src="https://user-images.githubusercontent.com/42646031/182899501-add5f486-f262-4560-9716-d88d136e09d9.png" width=200" />
 URL: https://www.flaticon.com/free-icon/chatbot_5226034
 
 ![image](https://user-images.githubusercontent.com/42646031/182899592-974b97a8-8595-4f91-a762-8937928c21f4.png)
