@@ -1,6 +1,19 @@
 # DuhChatbot
 Chatbot inspirated by Harward univesity but with DUH!
 
+### Need to be done:
+1.  [ ] Upgrade CSS file for centralize icon with response answer
+2.  [ ] Use Mustache for HTML
+3.  [ ] Update bot to endora hosting
+4.  [ ] Add BOT to my portfolio
+5.  [ ] In Read me write how you make a bot
+6.  [ ]
+7.  [ ]
+8.  [ ]
+9.  [ ]
+10. [ ]
+11. [ ]
+
 ### Work with:
 1. PHP
 2. AJAX
