@@ -4,15 +4,15 @@ Chatbot inspirated by Harward univesity but with DUH!
 ### Need to be done:
 1.  [ ] Upgrade CSS file for centralize icon with response answer
 2.  [ ] Use Mustache for HTML
-3.  [ ] Update bot to endora hosting
-4.  [ ] Add BOT to my portfolio
-5.  [ ] In Read me write how you make a bot
-6.  [ ]
-7.  [ ]
-8.  [ ]
-9.  [ ]
-10. [ ]
-11. [ ]
+3.  [ ] Update bot to endora hosting  
+4.  [ ] In Read me write how you make a bot
+5.  [ ] Make a separed page for chatbot on endora
+6.  [ ] On endora make a DB for chatbot with security stuff
+7.  [ ] Make stylized page on endora for chat bot
+8.  [ ] Make a page with how to control a chatbot on endora
+9.  [ ] Make sure that page have URL for my page portfolio 
+10. [ ] Make sure that is everything working so good
+11. [ ] Add BOT to my portfolio
 
 ### Work with:
 1. PHP
