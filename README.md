@@ -1,23 +1,11 @@
 # DuhChatbot
 Chatbot inspirated by Harward univesity but with DUH!
 
-### Need to be done:
-1.  [ ] Upgrade CSS file for centralize icon with response answer
-2.  [ ] Use Mustache for HTML
-3.  [ ] Update bot to endora hosting  
-4.  [ ] In Read me write how you make a bot
-5.  [ ] Make a separed page for chatbot on endora
-6.  [ ] On endora make a DB for chatbot with security stuff
-7.  [ ] Make stylized page on endora for chat bot
-8.  [ ] Make a page with how to control a chatbot on endora
-9.  [ ] Make sure that page have URL for my page portfolio 
-10. [ ] Make sure that is everything working so good
-11. [ ] Add BOT to my portfolio
-
 ### Work with:
 1. PHP
 2. AJAX
 3. CSS
+4. HTML
 
 ### ICONs:
 ![image](https://user-images.githubusercontent.com/42646031/182899501-add5f486-f262-4560-9716-d88d136e09d9.png)
@@ -31,6 +19,11 @@ URL: https://www.flaticon.com/premium-icon/user_1144760?term=user&page=1&positio
 
 
 ### PIC:
+
+all done:
+![image](https://user-images.githubusercontent.com/42646031/186450861-aa74f913-2526-4bb2-bc9f-e21d9b7cbb07.png)
+
+
 early stage:
 
 ![image](https://user-images.githubusercontent.com/42646031/182899004-262e7546-8282-4a14-91ba-35595b4197b5.png)
