@@ -22,7 +22,7 @@ URL: https://www.flaticon.com/premium-icon/user_1144760?term=user&page=1&positio
 
 all done:
 
-![image](https://user-images.githubusercontent.com/42646031/186450861-aa74f913-2526-4bb2-bc9f-e21d9b7cbb07.png)
+![image](https://user-images.githubusercontent.com/42646031/198354183-dee12856-123a-4d7b-9fcd-4db9b7c9f5d4.png)
 
 
 early stage:
