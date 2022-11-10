@@ -1,5 +1,6 @@
 # DuhChatbot
 Chatbot inspirated by Harward univesity but with DUH!
+URL: http://mujbot.4fan.cz/
 
 ### Work with:
 1. PHP
