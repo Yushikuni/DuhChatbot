@@ -3,9 +3,8 @@ Chatbot inspirated by Harward univesity but with DUH!
 
 ### Work with:
 1. PHP
-2. AJAX
-3. CSS
-4. HTML
+2. CSS
+3. HTML
 
 ### ICONs:
 ![image](https://user-images.githubusercontent.com/42646031/182899501-add5f486-f262-4560-9716-d88d136e09d9.png)
