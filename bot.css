@@ -126,3 +126,22 @@ body, html,h1 {
 	  float: right;
 	}
 }
+@media screen and (max-width: 600px) {
+  .user {
+    float: none;
+  }
+  .chatbot {
+    float: none;
+  }
+  .chat-message {
+    margin: 0.25em 1em;
+  }
+  .user .profilePic {
+    width: 3rem;
+    height: 3rem;
+  }
+  .chatbot .profilePic {
+    width: 3rem;
+    height: 3rem;
+  }
+}
