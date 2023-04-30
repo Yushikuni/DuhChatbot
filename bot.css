@@ -12,11 +12,10 @@ body, html,h1 {
 }
 .container {
   position: relative;
-  background-color: aliceblue;
   margin: auto;
-  height: auto;
+  height: 80vh;
   overflow-y: scroll;
-   overflow: hidden;
+  overflow: hidden;
 }
 .chat-header {
   background-color: #F7F7F7;
