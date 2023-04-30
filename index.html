@@ -15,36 +15,44 @@
         <h1>D'UH CHAT</h1>
         <div class="form">
             <div class="chatbot">
-                Need help?
+                Need some help?
             </div> 
         </div>  
-            <div class="input">
+            <div class="chat-message">
                 <input id="data" placeholder="Type your message here!" type="text" required> 
                 <button type="submit" class="fa fa-paper-plane" id="BTN_Send"> </button> 
             </div>                
     </div>
     <script>
-        $(document).ready(function(){
-            $("#BTN_Send").on("click", function(){
-                $value = $("#data").val();
-                $msg = '<div class="user"><img src="img/profile.png" alt="profile pic user" class="profilePic"/><div class="response"><p>'+ $value +'</p></div></div>';
-                $(".form").append($msg);
-                $("#data").val('');
-                
-                // start ajax code
-                $.ajax({
-                    url: 'chatbot.php',
-                    type: 'POST',
-                    data: 'text='+$value,
-                    success: function(result){
-                        $replay = '<div class="chatbot"><div class="response">'+ result +'</div><img src="img/chatbot.png" alt="profile pic bot" class="profilePic"/></div>'; 
-                        $(".form").append($replay);
-                        // when chat goes down the scroll bar automatically comes to the bottom
-                        $(".form").scrollTop($(".form")[0].scrollHeight);
-                    }
-                });
+       $(document).ready(function(){
+          $("#BTN_Send").on("click", function(){
+            $value = $("#data").val();
+            $msg = '<div class="user"><img src="img/profile.png" alt="profile pic user" class="profilePic"/><div class="response"><p>'+ $value +'</p></div></div>';
+            $(".form").append($msg);
+            $("#data").val('');
+        
+            // start ajax code
+            $.ajax({
+              url: 'chatbot.php',
+              type: 'POST',
+              data: 'text='+$value,
+              success: function(result){
+                $replay = '<div class="chatbot"><div class="response">'+ result +'</div><img src="img/chatbot.png" alt="profile pic bot" class="profilePic"/></div>'; 
+                $(".form").append($replay);
+                // when chat goes down the scroll bar automatically comes to the bottom
+                $(".container").animate({scrollTop: $(".container")[0].scrollHeight}, 1000);
+              }
             });
+          });
+        
+          // add event listener for pressing enter key
+          $('#data').keypress(function(event){
+            if(event.keyCode == 13){
+              event.preventDefault();
+              $("#BTN_Send").click();
+            }
         });
+});
     </script>
 </body>
 </html>
