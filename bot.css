@@ -1,147 +1,130 @@
 @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500,900&display=swap');
-    /*Schvalene CSS*/
-body, html,h1 {
-	font-family: Red hat Display, sans-serif;
-	font-weight: 400;
-	line-height: 1.25em;
-	letter-spacing: 0.025em;
-	color: #333;
-	background: #F7F7F7;	
-	justify-content: center;
-	display: flex;
+
+body, html, h1 {
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 400;
+    line-height: 1.25em;
+    letter-spacing: 0.025em;
+    color: #333;
+    background: #F7F7F7;
+    justify-content: center;
+    display: flex;
 }
+
 .container {
-  position: relative;
-  margin: auto;
-  height: 80vh;
-  overflow-y: scroll;
-  overflow: hidden;
+    position: relative;
+    margin: auto;
+    height: 80vh;
+    overflow-y: scroll;
+    overflow: hidden;
 }
+
 .chat-header {
-  background-color: #F7F7F7;
-  font-weight: bold;
+    background-color: #F7F7F7;
+    font-weight: bold;
 }
-/*Schvaleno KONEC*/
-.form
-{
+
+.form {
     display: flex;
     flex-direction: column;
 }
-.user
-{
-	background-color: #f1f1f1;
-	display: flex;
-	border-radius: 5px;
-	padding: 1em;
-	align-items: center;
-	position:relative;
-	float: left;
-	justify-content: flex-end;
 
+.user {
+    background-color: #f1f1f1;
+    display: flex;
+    border-radius: 5px;
+    padding: 1em;
+    align-items: center;
+    position: relative;
+    float: left;
+    justify-content: flex-end;
 }
-.chatbot
-{
-	border-color: #ccc;
-	display: flex;
-	background-color: #ddd;
-	border-radius: 5px;
-	padding: 1em;
-	align-items: center;
-	position:relative;
+
+.chatbot {
+    border-color: #ccc;
+    display: flex;
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 1em;
+    align-items: center;
+    position: relative;
     float: right;
     justify-content: flex-end;
 }
 
 /* Clear floats */
-.user::after 
-{
-	content: "";
-	clear: both;
-	display: table;
-}
-.chatbot::after 
-{
-	content: "";
-	clear: both;
-	display: table;
+.user::after, .chatbot::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
-.user .profilePic
-{
-	width: 4rem;
-	height: 4rem;
-	background-size: cover;
-	background-position: center;
-	border-radius: 50%;
-	margin-right:auto;
+.user .profilePic, .chatbot .profilePic {
+    width: 4rem; /* Můžeš zvětšit na mobilu */
+    height: 4rem; /* Můžeš zvětšit na mobilu */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-right: auto;
 }
 
-.chatbot .profilePic{
-	width: 4rem;
-	height: 4rem;
-	background-size: cover;
-	background-position: center;
-	border-radius: 50%;
-	margin-left: auto;
+.chat-message .fa-bars {
+    position: absolute;
+    left: 2.25rem;
+    width: auto;
+    color: #999;
+    transition: color 200ms;
+    padding: 5em;
+    margin: 2em;
 }
 
-.chat-message .fa-bars
-{
-	position: absolute;
-	left: 2.25rem;
-	width: auto;
-	color: #999;
-	transition: color 200ms;
-	padding: 5em;
-	margin: 2em;
+.chatbot .response {
+    margin-right: 1em;
+    margin-left: auto;
 }
 
-.chatbot .response
-{	
-	margin-right: 1em;
-	margin-left:auto;
-}
-.user .response
-{
-	margin-left: 1em;
-	margin-right:auto;
+.user .response {
+    margin-left: 1em;
+    margin-right: auto;
 }
 
-.chat-message
-{
-	align-self: flex-end;
-	margin:0.25em 5em;
+.chat-message {
+    align-self: flex-end;
+    margin: 0.25em 5em;
 }
 
 *:after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /*Responsive*/
-@media screen and (min-width: 331px) {
-	.user {
-	  float: left;
-	}
-	.chatbot{
-	  float: right;
-	}
+@media (max-width: 480px) {
+    .user {
+        float: left;
+        padding: 1.5em; /* Zvětšení paddingu pro mobilní zařízení */
+    }
+    .chatbot {
+        float: right;
+        padding: 1.5em; /* Zvětšení paddingu pro mobilní zařízení */
+    }
+    .user .profilePic, .chatbot .profilePic {
+        width: 5rem; /* Zvětšení velikosti profilového obrázku */
+        height: 5rem; /* Zvětšení velikosti profilového obrázku */
+    }
 }
-@media screen and (max-width: 600px) {
-  .user {
-    float: none;
-  }
-  .chatbot {
-    float: none;
-  }
-  .chat-message {
-    margin: 0.25em 1em;
-  }
-  .user .profilePic {
-    width: 3rem;
-    height: 3rem;
-  }
-  .chatbot .profilePic {
-    width: 3rem;
-    height: 3rem;
-  }
+
+@media (max-width: 768px) {
+    .user {
+        float: none;
+    }
+    .chatbot {
+        float: none;
+    }
+    .chat-message {
+        margin: 0.25em 1em;
+    }
+    .user .profilePic, .chatbot .profilePic {
+        width: 3rem; /* Můžeš zvětšit na mobilu */
+        height: 3rem; /* Můžeš zvětšit na mobilu */
+    }
 }
