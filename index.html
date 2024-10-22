@@ -1,58 +1,61 @@
 <!DOCTYPE html>
-
 <html lang="cs">
-
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="bot.css"/>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
-    <title> Chatbot app </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body> 
-    <div class="container">
-        <h1>D'UH CHAT</h1>
-        <div class="form">
-            <div class="chatbot">
-                Need some help?
-            </div> 
-        </div>  
-            <div class="chat-message">
-                <input id="data" placeholder="Type your message here!" type="text" required> 
-                <button type="submit" class="fa fa-paper-plane" id="BTN_Send"> </button> 
-            </div>                
-    </div>
+   <div class="container-fluid vh-100 d-flex flex-column justify-content-between" style="background-color: #222; color: #fff;">
+       <h1 class="text-center text-warning">D'UH CHAT</h1>
+       <div class="form flex-grow-1 overflow-auto" style="max-height: 70vh;">
+           <div class="chatbot">
+               <div class="response bg-success text-white p-2 rounded">Need some help? </div> <img src="img/chatbot.png" alt="profile pic bot" class="profilePic"/>
+           </div> 
+           <!-- User messages will be appended here -->
+       </div>  
+       <div class="chat-message d-flex align-items-center p-2" style="background-color: #333;">
+           <input id="data" class="form-control" placeholder="Type your message here!" type="text" required> 
+           <button type="submit" class="btn btn-warning ml-2" id="BTN_Send"><i class="fas fa-paper-plane"></i></button> 
+       </div>                
+   </div>
     <script>
        $(document).ready(function(){
-          $("#BTN_Send").on("click", function(){
-            $value = $("#data").val();
-            $msg = '<div class="user"><img src="img/profile.png" alt="profile pic user" class="profilePic"/><div class="response"><p>'+ $value +'</p></div></div>';
-            $(".form").append($msg);
-            $("#data").val('');
-        
-            // start ajax code
-            $.ajax({
-              url: 'chatbot.php',
-              type: 'POST',
-              data: 'text='+$value,
-              success: function(result){
-                $replay = '<div class="chatbot"><div class="response">'+ result +'</div><img src="img/chatbot.png" alt="profile pic bot" class="profilePic"/></div>'; 
-                $(".form").append($replay);
-                // when chat goes down the scroll bar automatically comes to the bottom
-                $(".container").animate({scrollTop: $(".container")[0].scrollHeight}, 2500);
-              }
-            });
-          });
-        
-          // add event listener for pressing enter key
-          $('#data').keypress(function(event){
-            if(event.keyCode == 13){
-              event.preventDefault();
-              $("#BTN_Send").click();
-            }
-        });
-});
+           $("#BTN_Send").on("click", function(){
+               var $value = $("#data").val().trim(); // Trim whitespace
+               if ($value === "") return; // Prevent sending empty messages
+
+               var $msg = '<div class="user d-flex justify-content-end align-items-center mb-2"><img src="img/profile.png" alt="profile pic user" class="profilePic"/><div class="response bg-primary text-white p-2 rounded">'+ $value +'</div></div>';
+               $(".form").append($msg);
+               $("#data").val('');
+
+               // Start AJAX code
+               $.ajax({
+                   url: 'chatbot.php',
+                   type: 'POST',
+                   data: { text: $value },
+                   success: function(result){
+                       var $replay = '<div class="chatbot d-flex align-items-center mb-2"><div class="response bg-success text-white p-2 rounded">'+ result +'</div><img src="img/chatbot.png" alt="profile pic bot" class="profilePic"/></div>'; 
+                       $(".form").append($replay);
+                       // Scroll to the bottom of the form
+                       $(".form").animate({scrollTop: $(".form")[0].scrollHeight}, 250);
+                   }
+               });
+           });
+
+           // Add event listener for pressing the enter key
+           $('#data').keypress(function(event){
+               if(event.keyCode == 13){
+                   event.preventDefault();
+                   $("#BTN_Send").click();
+               }
+           });
+       });
     </script>
 </body>
 </html>
