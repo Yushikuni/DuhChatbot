@@ -1,130 +1,44 @@
-@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500,900&display=swap');
-
-body, html, h1 {
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: 400;
-    line-height: 1.25em;
-    letter-spacing: 0.025em;
-    color: #333;
-    background: #F7F7F7;
-    justify-content: center;
-    display: flex;
+/* Nadpis chatbota */
+h1 {
+    color: #f1c40f;
+    margin: 20px 0;
+    text-align: center;
 }
 
-.container {
-    position: relative;
-    margin: auto;
-    height: 80vh;
-    overflow-y: scroll;
-    overflow: hidden;
-}
-
-.chat-header {
-    background-color: #F7F7F7;
-    font-weight: bold;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-}
-
-.user {
-    background-color: #f1f1f1;
-    display: flex;
+/* Styl pro zprávy */
+.response {
+    max-width: 80%; /* Limit the width of messages */
+    word-wrap: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Ensure long words break */
+    background-color: #444; /* Different background for better visibility */
+    padding: 10px;
     border-radius: 5px;
-    padding: 1em;
-    align-items: center;
-    position: relative;
-    float: left;
-    justify-content: flex-end;
+    color: #fff; /* Text color */
 }
 
-.chatbot {
-    border-color: #ccc;
-    display: flex;
-    background-color: #ddd;
-    border-radius: 5px;
-    padding: 1em;
-    align-items: center;
-    position: relative;
-    float: right;
-    justify-content: flex-end;
-}
-
-/* Clear floats */
-.user::after, .chatbot::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.user .profilePic, .chatbot .profilePic {
-    width: 4rem; /* Můžeš zvětšit na mobilu */
-    height: 4rem; /* Můžeš zvětšit na mobilu */
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    margin-right: auto;
-}
-
-.chat-message .fa-bars {
-    position: absolute;
-    left: 2.25rem;
-    width: auto;
-    color: #999;
-    transition: color 200ms;
-    padding: 5em;
-    margin: 2em;
-}
-
-.chatbot .response {
-    margin-right: 1em;
-    margin-left: auto;
-}
-
+/* Styl pro uživatelskou zprávu */
 .user .response {
-    margin-left: 1em;
-    margin-right: auto;
+    background-color: #007bff; /* User message background */
+    align-self: flex-end; /* Align user messages to the right */
 }
 
-.chat-message {
-    align-self: flex-end;
-    margin: 0.25em 5em;
+/* Styl pro chatbot zprávu */
+.chatbot .response {
+    background-color: #28a745; /* Bot message background */
+    align-self: flex-start; /* Align bot messages to the left */
 }
 
-*:after {
-    box-sizing: border-box;
+/* Profilové obrázky */
+.profilePic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/*Responsive*/
-@media (max-width: 480px) {
-    .user {
-        float: left;
-        padding: 1.5em; /* Zvětšení paddingu pro mobilní zařízení */
-    }
-    .chatbot {
-        float: right;
-        padding: 1.5em; /* Zvětšení paddingu pro mobilní zařízení */
-    }
-    .user .profilePic, .chatbot .profilePic {
-        width: 5rem; /* Zvětšení velikosti profilového obrázku */
-        height: 5rem; /* Zvětšení velikosti profilového obrázku */
-    }
-}
-
-@media (max-width: 768px) {
-    .user {
-        float: none;
-    }
-    .chatbot {
-        float: none;
-    }
-    .chat-message {
-        margin: 0.25em 1em;
-    }
-    .user .profilePic, .chatbot .profilePic {
-        width: 3rem; /* Můžeš zvětšit na mobilu */
-        height: 3rem; /* Můžeš zvětšit na mobilu */
+/* Zvětšit šířku zpráv pro mobilní zařízení */
+@media (max-width: 600px) {
+    .response {
+        width: 90%; 
     }
 }
