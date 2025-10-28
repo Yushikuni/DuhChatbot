@@ -1,9 +1,26 @@
-/* Nadpis chatbota */
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500,900&display=swap');
+
+body, html {
+	font-family: Red hat Display, sans-serif;
+	font-weight: 400;
+	line-height: 1.25em;
+	letter-spacing: 0.025em;
+    margin-bottom: 100px;
+    margin-top: 100px;
+};
+
 h1 {
     color: #f1c40f;
     margin: 20px 0;
     text-align: center;
-}
+};
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: calc(50% + 12rem);
+	transform: translate(-50%, -50%);
+};
 
 /* Styl pro zprávy */
 .response {
@@ -14,31 +31,80 @@ h1 {
     padding: 10px;
     border-radius: 5px;
     color: #fff; /* Text color */
-}
-
+};
 /* Styl pro uživatelskou zprávu */
 .user .response {
     background-color: #007bff; /* User message background */
     align-self: flex-end; /* Align user messages to the right */
-}
+};
 
 /* Styl pro chatbot zprávu */
 .chatbot .response {
     background-color: #28a745; /* Bot message background */
     align-self: flex-start; /* Align bot messages to the left */
+    order:1;
+};
+
+.profilePic{
+    width: 4rem;
+	height: 4rem;
+	background-size: cover;
+	background-position: center;
+	border-radius: 50%;
+};
+/* ==== OPRAVA ZAROVNÁNÍ PROFILOVEK A BUBLIN ==== */
+
+/* Kontejner pro jednotlivou zprávu:
+   - zabrání zalomení položek (img + bublina) pomocí nowrap
+   - srovná vertikálně na střed pro hezčí vzhled */
+.chatbot,
+.user {
+  display: flex;           /* už máš, ale explicitně pro jistotu */
+  align-items: center;     /* zarovná obrázek a text na střed vertikálně */
+  flex-wrap: nowrap;       /* zabrání tomu, aby se obrázek zalomil pod text */
+  gap: 0.5rem;             /* malý odstup mezi obrázkem a bublinou (moderní) */
+  margin-bottom: 10px;
 }
 
-/* Profilové obrázky */
+/* Uděláme bublinu skutečným flex-itemem, který se nebude natahovat na 100% */
+.chatbot .response,
+.user .response {
+  flex: 0 1 auto;          /* nebude nuceně zabírat celou šířku */
+  max-width: 80%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Obrázky nebudou flex-growovat ani se smrštovat nečekaně */
 .profilePic {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+  flex: 0 0 auto;          /* fixní velikost, žádné roztahování */
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;       /* pokud používáš <img>, zajistí správné oříznutí */
+  border-radius: 50%;
 }
 
-/* Zvětšit šířku zpráv pro mobilní zařízení */
-@media (max-width: 600px) {
-    .response {
-        width: 90%; 
-    }
+/* BOT: obrázek vlevo, text vpravo */
+.chatbot img.profilePic {
+  order: 0;
+  margin-right: 0.5rem;    /* mezera mezi obrázkem a textem */
+}
+.chatbot .response {
+  order: 1;
+}
+
+/* UŽIVATEL: text vlevo, obrázek vpravo */
+.user img.profilePic {
+  order: 1;
+  margin-left: 0.5rem;
+}
+.user .response {
+  order: 0;
+  text-align: left;
+}
+
+/* Pokud používáš Bootstrap třídy typu justify-content-end u .user,
+   tak chceme, aby položky byly stále vedle sebe, ale zarovnané doprava */
+.user {
+  justify-content: flex-end;
 }
